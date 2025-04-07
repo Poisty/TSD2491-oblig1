@@ -1,4 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using MvcBruker.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<BrukerContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("BrukerContext") ?? throw new InvalidOperationException("Connection string 'BrukerContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
