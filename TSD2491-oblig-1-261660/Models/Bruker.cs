@@ -10,7 +10,7 @@ namespace TSD2491_oblig_1_261660.Models
         
         public string? Kontakt { get; set; }
         
-        public int Spill { get; set; }
+        public int AntallSpill { get; set; }
     }
           
 }
