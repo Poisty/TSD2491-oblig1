@@ -1,3 +1,14 @@
+@{
+    ViewData["Title"] = "Spill";
+}
+
+<h1>2-like Spill</h1>
+
+<form asp-controller="Spill" asp-action="RegistrerSpill" method="post">
+    <input type="text" name="navn" placeholder="Skriv inn brukernavn" required />
+    <button type="submit">Start spill</button>
+</form>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
