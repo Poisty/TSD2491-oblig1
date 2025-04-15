@@ -52,4 +52,15 @@ public IActionResult RegistrerSpill(string navn)
     return RedirectToAction("Index");
 }
 
+public IActionResult Rangering()
+{
+    var brukere = _context.Bruker
+        .OrderByDescending(b => b.AntallSpill)
+        .ToList();
+
+    return View(brukere);
+}
+
+
+
 }

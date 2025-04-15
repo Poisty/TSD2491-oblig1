@@ -1,0 +1,24 @@
+@model IEnumerable<TSD2491_oblig_1_261660.Models.Bruker>
+
+
+<h1>Rangering - Brukere som har spilt mest</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Plass</th>
+            <th>Navn</th>
+            <th>Antall Spill</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var bruker in Model.Select((b, i) => new { Bruker = b, Index = i + 1 }))
+        {
+            <tr>
+                <td>@bruker.Index</td>
+                <td>@bruker.Bruker.Navn</td>
+                <td>@bruker.Bruker.AntallSpill</td>
+            </tr>
+        }
+    </tbody>
+</table>
